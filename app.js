@@ -44,11 +44,8 @@ db.once('open', function() {
 app.get("/", (req, response) => {
     response.send('Hello, I am working!')
 })
-
-app.get("*", (req, response) => {
-    response.send('Not found')
-})
 // New code ends
+
 app.post('/createdevice', async (req, res) => {
     console.log(req.body)
     const device = new Device(req.body);
